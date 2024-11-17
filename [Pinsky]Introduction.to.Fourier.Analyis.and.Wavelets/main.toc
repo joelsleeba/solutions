@@ -1,0 +1,7 @@
+\contentsline {chapter}{Contents}{1}{chapter*.1}%
+\contentsline {chapter}{\numberline {1}Fourier Series on the Circle}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Motivation and Heuristics}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Motivations from Physics}{2}{subsection.1.1.1}%
+\contentsline {subsubsection}{The Vibrating String}{2}{section*.2}%
+\contentsline {subsubsection}{The Heat Flow in Solids}{2}{section*.3}%
+\contentsline {subsection}{\numberline {1.1.2}Absolutely Convergent Trigonometric Series}{2}{subsection.1.1.2}%

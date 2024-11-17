@@ -1,0 +1,55 @@
+% TeX_root = ../main.tex
+
+\chapter{Fourier Series on the Circle}
+
+\section{Motivation and Heuristics}
+
+\subsection{Motivations from Physics}
+
+\subsubsection{The Vibrating String}
+
+\begin{exercise}
+  Use Induction. Show that $\sin^3(x)$ can be written as a sum of three sines.
+\end{exercise}
+
+\begin{exercise}
+  Use contradiction. Integrate over $[0, \pi]$.
+\end{exercise}
+
+\begin{exercise}
+  Use the same logic as above.
+\end{exercise}
+
+\begin{exercise}
+  Easy
+\end{exercise}
+
+\subsubsection{The Heat Flow in Solids}
+
+\subsection{Absolutely Convergent Trigonometric Series}
+
+\setcounter{theorem}{6}
+
+\begin{exercise}
+  Use triangle inequality on the definition of limit. Then use the
+  given hint and the absolute convergence of the sequence again. Now
+  use dominated convergence theorem for the counting measure.
+\end{exercise}
+
+\begin{exercise}
+  Same method as above the exercise using induction.
+\end{exercise}
+
+\begin{corollary}
+  Use the fact that
+  \begin{align*}
+    \int_{\mathbb{T}}  g(  \theta+ \phi) e^{ i n \theta} \ d \theta  =
+    \int_{\mathbb{T}}  g( \pi) e^{in(y -  \phi)} \ d  y = e^{-ix
+    \phi} \int_{\mathbb{T}}  g(\pi) e^{iny} \ d y
+  \end{align*}
+  to get that the $n$-th Fourier coefficient for $g(\theta - \phi)$
+  is $e^{-in\phi} D_n$ where $D_n$ is the $ n$-th Fourier
+  coefficient of $g(x)$.
+\end{corollary}
+
+

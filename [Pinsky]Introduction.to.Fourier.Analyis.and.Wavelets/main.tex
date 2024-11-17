@@ -1,0 +1,94 @@
+\documentclass[12pt]{report}
+
+\usepackage{geometry} % automatic papersizes, margins.
+\usepackage{makeidx} % 'makeidx' make and show index
+\usepackage{enumitem} % itemize, enumerate, description.
+\usepackage{hyperref} % hyperlinks, cross-references.
+\usepackage{xcolor} % foreground and background color management.
+% Better color mixing compared to 'color'
+\usepackage{graphicx} % provide options for \includegraphics. Builds
+% on 'graphic'
+\usepackage{caption} % better control over captions of figures and equations.
+\usepackage{appendix} % extra control over appendix
+\usepackage[backend=biber, style=alphabetic]{biblatex} % better than
+% bibtex, people say.
+\usepackage{tocbibind} % add ToC/Bibliography/Index to ToC
+
+\usepackage{amsmath} % math symbols, matrices, cases, trig functions,
+% var-greek symbols.
+\usepackage{amsfonts} % mathbb, mathfrak, large sum and product symbols.
+\usepackage{amssymb} % extended list of math symbols from AMS.
+% https://ctan.math.washington.edu/tex-archive/fonts/amsfonts/doc/amssymb.pdf
+\usepackage{amsthm} % theorem styling.
+\usepackage{mathrsfs} % mathscr fonts.
+\usepackage{yhmath} % widehat.
+\usepackage{empheq} % emphasize equations, extending 'amsmath' and 'mathtools'.
+\usepackage{bm} % simplified bold math. Do \bm{math-equations-here}
+\usepackage{tikz} % for tikz diagrams
+\usepackage{tikz-cd} % commutative diagrams.
+\usepackage{marginnote} % For sidenotes
+
+\geometry{
+  a4paper, % 'a4paper', 'c5paper', 'letterpaper', 'legalpaper'
+  asymmetric, % don't swap margins in left and right pages. as
+  % opposed to 'twoside'
+  centering, % to center the content between margins
+  bindingoffset=0cm,
+}
+
+\hypersetup{
+  colorlinks,
+  linkcolor={blue!50!black},
+  citecolor={blue!50!black},
+  urlcolor={blue!80!black}
+}
+
+\theoremstyle{plain} % default; italic text, extra space above and below
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{problem}{Problem}[section]
+
+\theoremstyle{definition} % upright text, extra space above and below
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark} % upright text, no extra space above or below
+\newtheorem{remark}{Remark}[section]
+\newtheorem*{note}{Note} %'Notes' in italics and without counter
+
+\newcommand{\propositionautorefname}{Proposition}
+\newcommand{\lemmaautorefname}{Lemma}
+\newcommand{\corollaryautorefname}{Corollary}
+\newcommand{\problemautorefname}{Problem}
+\newcommand{\definitionautorefname}{Definition}
+\newcommand{\exampleautorefname}{Example}
+\newcommand{\remarkautorefname}{Remark}
+\newcommand{\noteautorefname}{Note}
+
+\addbibresource{articles.bib}
+
+\begin{document}
+\title{Document Title}
+
+\author{
+  Joel Sleeba \\
+  University of Houston \\
+  joelsleeba1@gmail.com \\
+}
+
+\maketitle
+
+\pagenumbering{roman} \setcounter{page}{2}
+\tableofcontents
+\pagenumbering{arabic} \setcounter{page}{1}
+
+\include{chapters/1.tex}
+
+\printbibliography[heading=bibintoc]
+
+\end{document}
+
+

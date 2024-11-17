@@ -1,0 +1,116 @@
+% TeX_root = ../main.tex
+
+\chapter{The Integral}
+
+\begin{exercise}[A]
+  If the simple function $\phi$ in $M^{+}(X, \mathcal{X})$ is of the form (not necessarily standard representation) $$\phi  = \sum_{k = 1}^{m} b_k \chi_{F_k}$$, then show that $$\int \phi \ d \mu = \sum_{k = 1}^{m}  b_k \mu(F_k)$$
+\end{exercise}
+\begin{solution}
+  If $\phi(x) = \sum_{k = 1}^{m} b_k \chi_{F_k}$ is the standard form, the rest will follow from the definition of the integral itself. So without loss of generality, assume $F_1 \cap F_2 \neq \emptyset$ and $\psi = b_1 \chi_{F_1} + b_{2} \chi_{F_2}$. Now disjointifying $F_1$ and $F_2$, if $E_1 = F_1 \setminus F_2, E_2 = F_1 \cap F_2, E_3 = F_2 \setminus F_1$, then the standard form of $\psi$ is $\psi = b_1 \chi_{E_1} + (b_1+b_2) \chi_{E_2} + b_2 \chi_{E_3}$. Then by the definition of the integral for simple functions in their standard form, we get \begin{align*}
+    \int \psi \ d \mu &=  b_1 \mu(E_1) + (b_1 + b_2) \mu(E_2) + b_3 \mu(E_3) \\ 
+                      &=  b_1 (\mu(E_1) + \mu(E_2)) + b_2 (\mu(E_2) + \mu(E_3)) \\
+                      &=  b_1 \mu(F_1) + b_2 \mu(F_2)
+  \end{align*}
+
+  Now to prove the general thing, we'll use induction. Assume if $\phi_{m-1} = \sum_{k = 1}^{m-1} b_k \chi_{F_k}$ has its integral $$\int \phi_{m-1} \ d \mu = \sum_{k = 1}^{m - 1} b_k \mu(F_k)$$
+  Now consider $\phi_{m} = \sum_{k = 1}^{m} b_k \chi_{F_k}$.
+
+  OR
+
+  use the additivity of the integral of simple functions (Lemma 4.3a)
+\end{solution}
+
+\begin{exercise}[B]
+  The sum, scalar multiple, and product of simple functions are simple functions.
+\end{exercise}
+\begin{solution}
+    If $\phi = \sum_{i = 1}^{n} a_i \chi_{A_i}$ and $\psi = \sum_{j = 1}^{m} b_j \chi_{B_j}$ are simple functions in their standard form, then $$\phi + \psi = \sum_{i = 1}^{n} \sum_{j = 1}^{m} c_{ij} \chi_{C_{ij}} \quad \phi \psi = \sum_{i = 1}^{n} \sum_{j = 1}^{m} d_{ij} \chi_{D_{ij}}$$ where $c_{ij} = a_i + b_j, d_{ij} = a_i b_j$ and $C_{ij} = A_i \cap B_j = D_{ij}$. Which shows $\phi + \psi$ and $\phi \psi$ are simple functions. 
+    Verifying it for scalar multiple is has a similar proof.
+\end{solution}
+
+\begin{exercise}[C]
+  If $\phi_1, \phi_2$ are simple functions in $M(X, \mathcal{X})$, then $$\varphi = \sup \{ \phi_1, \phi_2 \},\quad \omega = \inf \{ \phi_1, \phi_2 \}$$ are also simple functions in $M(X, \mathcal{X})$
+\end{exercise}
+\begin{solution}
+   It is clear from the second chapter that functions $\varphi, \omega$ are measurable being the supremum and infimum of two measurable functions. What is remain to verify is that they are simple, that is they only take a finitely many values in the range. But this follows easily since the range of both $\varphi, \omega$ must be a subset of the union of ranges of $\phi_1$ and $\phi_2$ which are both finite.
+\end{solution}
+
+
+\begin{exercise}[D]
+  If $f \in M^{+}$ and $c>0$, then the mapping $\phi \to \psi = c \phi$ is a one-to-one mapping between simple functions $\phi \le f$ and $\psi \le cf$. Use this fact to show that \[
+      \int cf \ d \mu = c \int f \ d \mu
+  \]
+\end{exercise}
+\begin{solution}
+  Assuming that it is a one-to-one map, if $\psi$ is any simple function with $\psi \le cf$, then $\phi = \frac{1}{c}\psi \le f$. This works over taking supremum of such simple function and gives the equality of the said integrals.
+  
+  Now the question remaining is whether it is such a one-to-one map. Yes.
+\end{solution}
+
+\begin{exercise}[E]
+  \label{ex:E}
+  Let $f, g \in M^{+}$ and $\omega \in M^{+}$ be a simple function such that $\omega \le f+g$ and let $\phi_n(x) = \sup \{ \frac{m}{n} \omega(x) : \textrm{ for }  0 \le m \le n  \textrm{ with } \frac{m}{n}\omega(x) \le f(x)\}$. Also let $\psi_n(x) = \sup \{ (1- \frac{1}{n})\omega(x) - \phi_n(x), 0 \}$. Show that $(1- \frac{1}{n}) \omega \le \phi_n + \psi_n$ and $ \phi_n \le f, \psi_n \le g$
+\end{exercise}
+\begin{solution}
+  From the definition of $\phi_n$, it is clear that $\phi_n \le f$ (supremum of a finite set is an element of the set). Similarly showing $(1- \frac{1}{n}) \omega \le \phi_n + \psi_n$ is equivalent to showing $(1 - \frac{1}{n}) \omega - \phi_n \le \psi_n$ which follows directly from the definition of $\psi_n$.
+
+  To show $\psi_n \le g$, assume that for some $x, \phi_n(x) = \frac{k}{n}\omega(x)$. Then by the definition of $\phi_n$, we get that $f(x) \le \frac{k+1}{n}\omega(x)$. Now $(1 - \frac{1}{n}) \omega(x) - \phi_n(x) = \omega(x) - \frac{k+1}{n}\omega(x) \le f+g -f = g$. Since $(1- \frac{1}{n}) \omega(x) - \phi_n(x) \le g(x)$ and $g(x) \ge 0$, we get $\psi_n \le g$.
+\end{solution}
+\begin{exercise}[F]
+  Employ \autoref{ex:E} to establish Corollary 4.7(b) (Additivity of integral in positive functions) without using Monotone convergence theorem.
+\end{exercise}
+\begin{solution}
+   Since we could show 
+   \[
+     \int (f+g) \ d \mu \ge \int f \ d \mu + \int g \ d \mu
+   \]
+   without using MCT, we will assume this. The idea was whenever $\phi, \psi$ are non-negative simple functions with $\phi \le f$ and $\psi \le g$, then $\phi+\psi$ is a non-negative simple function with $\phi+\psi \le f+g$. Hence we get the equality.
+
+   To get the reverse inequality we use \autoref{ex:E}. That is if $\omega$ is a non-negative simple function with $\omega \le f+g$, then we get corresponding $\phi_n, \psi_n$ with the required properties. Hence in a similar way we get the reverse inequality. (This feels a more organic way to go abt proving it)
+\end{solution}
+
+\begin{exercise}[J(b)]
+  Let $X=\mathbb{R}, \mathcal{X}$ be the Borel measurable sets and $\lambda$ be the Lebesgue measure on $\mathcal{B}$. If $g_n = n\chi_{[1/n,2/n]}$, then the sequence converges to $g = \textbf{0}$. Is the convergence uniform? Does MCT apply? Does Fatou's lemma apply?
+\end{exercise}
+\begin{solution}
+  The convergence is not uniform. This is because $\|g_n - g\| = n$ in sup norm. MCT does not apply since $g_n$ are not monotone. But Fatou's lemma is satisfied.
+\end{solution}
+\begin{exercise}[K]
+  If $(X, \mathcal{X}, \mu)$ is a finite measure space, and if $(f_n)$ is a real-valued sequence in $M^{+}(X, \mathcal{X})$ which converges uniformly to a function $f$, then $f \in M^{+}(X, \mathcal{X})$ and \[
+    \int f \ d \mu = \lim \int f_n \ d \mu
+  \]
+\end{exercise}
+\begin{solution}
+  The fact that $f \in M(X, \mathcal{X})$ follows from the fact that limits of measurable functions are measurable and uniform convergence imply pointwise convergence and a sequence of non-negative real numbers if converges must converge to a non-negative real number.
+
+  Now using Fatou's lemma, we get \[
+    \int f \ d \mu \le \lim \sup \int f_n \ d \mu
+  \]
+  Since $f_n$ converges to $f$ uniformly, for a given $\epsilon \ge 0$ there exists $N_\epsilon \in \mathbb{N}$ such that for all $n \ge N_\epsilon$, we get $|f(x) - f_n(x)| \le \epsilon$ for all $x \in X$. Therefore $f_n(x) \le f(x) + \epsilon$ and taking integral gives \[
+    \int f_n \ d \mu \le \int f \ d \mu + \epsilon \mu(X)
+  \]
+  Since this is true for all $\epsilon \ge 0$ and $n \ge N_\epsilon$, we must have \[
+    \lim \sup \int f_n \ d \mu \le \int f \ d \mu
+  \]
+  We us the fact that $\lim \inf \int f \ d \mu \le \lim \sup \int f \ d \mu$ and combine it with the first inequality to get
+  \[
+       \int f \ d \mu \le \lim \inf \int f_n \ d \mu \le \lim \sup \int f \ d \mu \le \int f \ d \mu
+  \]
+  which gives our required result.
+ \end{solution}
+
+\begin{exercise}[L*]
+  Let $X$ be a finite closed interval $[a, b] \subset \mathbb{R}$, $\mathcal{X}$ be the collection of Borel sets in $X$ and $\lambda$ be the Lebesgue measure on $X$. If $f$ is a non-negative continuous function on $X$, show that \[
+    \int f \ d \lambda = \int_{a}^{b} f(x) \ d x
+  \]
+  where the right hand side integral is the Riemann integral of $f$.
+\end{exercise}
+\begin{solution}
+  We'll begin small by proving this for step functions $f$. Assume $f = \sum_{i = 1}^{n} \alpha_i \chi_{E_i}$ with $a_i \ge 0$ where $E_i = [a_{ i-1}, a_{i}]$ are disjoint partitions of $X$. That is $a = a_0 \le a_1 \le \ldots \le a_n = b$. Then \[
+    \int f \ d \lambda = \sum_{i = 1}^{n} \alpha_i (a_{i-1} - a_i) = \int_{a}^{b} f(x) \ d x
+  \]
+  Now for a general non-negative continuous function $f$, since it is Riemann integrable the Riemann integral of $f$ is the supremum of the lower Riemann sum. The lower Riemann sum of any partition $a=a_0 \le \ldots a_n = b$ is the integral of the simple function $\phi = \sum_{i = 1}^{n} m_i \chi_{E_i}$ where $E_i = [a_{ i-1}, a_i]$ and $ m_i = \inf_{x \in E_i} f(x)$. Hence every partition of $[a, b]$ gives a simple function $\phi \le f$ where the lower Riemann sum of the partition and measure theoretic integral of $\phi$ are equal. This gives $$\int_{a}^{b} f(x) \ dx  \le \int f \ d  \lambda$$
+
+  Conversely if $\phi \le f$ is a simple function of the standard form $\phi = \sum_{i = 1}^{n} a_i \chi_{A_i}$, then (\textcolor{red}{continuity of $f$ should restrict $A_i$s to be the union of intervals. Justify how?})
+\end{solution}
+

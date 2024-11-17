@@ -1,0 +1,169 @@
+% TeX_root = ../main.tex
+
+\chapter{Measures}
+
+\begin{exercise}[A]
+	If $\mu$ is a measure on $X$ and $E \in \mathcal{X}$, then define $\lambda(A) = \mu(A \cap E)$ for all $A \in \mathcal{X}$. Show that $\lambda$ is a measure.
+\end{exercise}
+\begin{solution}
+	Since $\mu$ is a measure, $\mu \ge 0$ and therefore it follows that $\lambda \ge 0$. Hence we just need to verify countable subadditivity of $\lambda$. But this follows easily as $$(\bigcup_{i \in \mathbb{N}} A_i) \cap E = \bigcup_{i \in \mathbb{N}} A_i \cap E$$
+\end{solution}
+
+\begin{exercise}[B]
+	If $\mu_1, \mu_2, \ldots \mu_n$ are measures on $X$ on $\mathcal{X}$ and $a_1, a_2, \ldots a_n$ be positive real numbers. Show that the function $\lambda$ defined on $\mathcal{X}$ as $$\lambda(E) = \sum_{i=1}^n a_i \mu_i(E)$$ is a measure on $X$.
+\end{exercise}
+\begin{solution}
+	Since it is easy to verify that $\lambda(\emptyset) = 0$ and $\lambda(E) \ge 0$ for all $E \in \mathcal{X}$, we will just verify the countable additivity of $\lambda$. Let $A_i$ be a countable collection of disjoint subsets of $X$. Then by the countable additivity of the measures $\mu_i$, we get $$\mu_j(\bigcup_i A_i) = \sum_i\mu_j(A_i)$$
+	Hence $$\lambda(\bigcup_{ i \in \mathbb{N}} A_i) = \sum_{ j =1 }^n \mu_j(\bigcup_{ i \in \mathbb{N}} A_i) = \sum_{j=1}^n\sum_{i\in \mathbb{N}} \mu_j( A_i) = \sum_{ i \in \mathbb{N}}^{} \sum_{j=1}^{n} \mu_j(A_i) = \sum_{ i \in \mathbb{N}}^{} \lambda(A_i)$$
+\end{solution}
+
+\begin{exercise}[C]
+	If $(\mu_n)$ is a sequence of measures on $ X$ with $ \mu_n(X) = 1$ and if $\lambda$ is defined by $$\lambda(E) = \sum_{n=1}^{\infty} 2^{-n} \mu_{n}(E)$$
+	then $\lambda$ is a measure on $\mathcal{X}$ and $\lambda(X) = 1$
+\end{exercise}
+\begin{solution}
+	Note that once we prove that $  \lambda$ is a measure on $X$, then the fact that $ \lambda(X) = 1$ will follow from the definition of $\lambda$. Also the fact that $\lambda(\emptyset) = 0$ and $\lambda(E) \ge 0$ follows easily from the definition. We will verify countable additivity of $\lambda$.
+
+	For that let $A_i$ be a countable collection of disjoint elements in $ \mathcal{X}$. By the countable additivity of the measures, $ \mu_n$, we get that $$\mu_n(\bigcup_{i \in \mathbb{N}} A_i) = \sum_{i \in \mathbb{N}}^{} \mu_n(A_i)$$
+	Hence $$\lambda(\bigcup_{i \in \mathbb{N}} A_i) = \sum_{ n=1}^{\infty} 2^{-n} \mu_n(\bigcup_{i \in \mathbb{N}} A_i) = \sum_{n=1}^{\infty} \sum_{ i \in \mathbb{N}}^{}  2^{-n}\mu_n(A_i)$$
+	Since $  \mu_i(X) = 1$, we get that $ \sum_{i\in \mathbb{N}}^{} \mu_n(A_i) \le 1$ and therefore the double summation above is absolutely summable enabling us to interchange the order of summation. Hence, we get \[\lambda(\bigcup_{i \in \mathbb{N}} A_i) = \sum_{i \in \mathbb{N}}^{} \sum_{n = 1}^{\infty} 2^{-n}\mu_n(A_i) = \sum_{i \in \mathbb{N}}^{} \lambda(A_i)\]
+\end{solution}
+
+\begin{exercise}[D]
+	Let $X=\mathbb{N}$ and let $\mathcal{X}$ be the $ \sigma$-algebra of all the subsets of $\mathbb{N}$. If $(a_n)$ is a sequence of non-negative real numbers and if we define $ \mu$ by $$\mu(\emptyset) = 0, \quad  \mu(E) = \sum_{n \in E}^{} a_n$$
+	then $\mu$  is a measure on $\mathbb{ N}$. Conversely, every measure on $\mathcal{ X}$ is obtained this way.
+\end{exercise}
+\begin{solution}
+	Once we have a sequence $(a_n)$, it is quite easy to verify that $ \mu$ is a measure on $\mathbb{ N}$. We'll show that every measure on $\mathbb{ N}$ is of this form.
+
+	Let $ \mu$ be a measure on $ \mathbb{N}$ and $n \in \mathbb{N}$, then $ \{ n \} \in \mathcal{X}$ and therefore denote $\mu(\{ n \})$ by $a_n$. Then we see that if $E$ is any subset of $ X$, then $$\mu(E) = \sum_{ n\in E}^{} a_n$$
+\end{solution}
+
+\begin{exercise}[F]
+	Let $X=\mathbb{N}$ and let $\mathcal{X}$ be the family of all subsets of $\mathbb{N}$. Define a function $\mu$ on $ \mathcal{X}$ as $\mu(E) = 0$ if $E$ is finite and $\mu(E) = +\infty$ if $ E$ is infinite. Is $\mu$ a measure on $\mathcal{X}$?
+\end{exercise}
+\begin{solution}
+	No. Countable union of disjoint finite sets can be infinite.
+\end{solution}
+
+
+\begin{exercise}[G]
+	Is $\mu$ a measure if $\mu(E) = +\infty$ for all $E \in \mathcal{X}$ in exercise \textbf{F}
+\end{exercise}
+\begin{solution}
+	No. $\mu(\emptyset) \neq 0$
+\end{solution}
+
+\begin{exercise}[H]
+	Show that if the finiteness condition $\mu(F_1) < +\infty$ is dropped, then there exist a decreasing sequence $F_n$ with $\mu(\cap_{i \in \mathbb{N} } F_i) \neq \lim_{i \to \infty} \mu(F_i)$
+\end{exercise}
+\begin{solution}
+	Let $F_i = \mathbb{R} \setminus [-i, i]$. Then it satisfies all the above.
+\end{solution}
+
+\begin{exercise}[I] A
+	Let $(X, \mathcal{X}, \mu)$ be a measure space and let $(E_n)$ be a sequence in $ \mathcal{X}$. Show that $$\mu(\lim \inf E_n) \le \lim \inf \mu(E_n)$$
+\end{exercise}
+\begin{solution}
+	From the previous chapter we know that $$\lim \inf E_n = \bigcup_{n \in \mathbb{N}} \bigcap_{m > n} E_m$$
+	Since the measure is continuous from below, we get that $$\mu(\lim \inf E_n) = \lim \mu \Big( \bigcap_{m>n} E_m\Big)$$
+	Now since $\cap_{m \ge n} E_m \subset E_m$ for all $m \ge n$, we get that $$\mu\Big(\bigcap_{m > n} E_m\Big) \le \inf_{m \ge n} \mu(E_m)$$
+	Substituting this to the above equation gives us our required result.
+\end{solution}
+
+\begin{exercise}[J]
+	Let $(X, \mathcal{X}, \mu)$ be a measure space and let $(E_n)$ be a sequence in $ \mathcal{X}$. Show that $$\lim \sup \mu(E_n) \le \mu(\lim \sup E_n)$$
+\end{exercise}
+\begin{solution}
+	Follow similar reasoning as above using the continuity of the measure from above when $\mu(E_1) < \infty$. Note that $E_m \subset \cup_{m \ge n}E_m$ for all $  m \ge n$, and therefore $$\sup_{m \ge n}\mu(E_m) \le \mu\Big( \bigcup_{m > n} E_m\Big)$$
+	which will give us our required inequality.
+\end{solution}
+
+\begin{exercise}[L* (Completion of a measure)]
+	Let $(X, \mathcal{X}, \mu)$ be a measure space and $\mathcal{Z}$ be the collection of measure zero sets in $\mathcal{X}$. Let $\mathcal{ X}^\prime$ be the family of all subsets of $X$ of the form $$(E \cup Z_1)\setminus Z_2, \quad E \in \mathcal{X},\ Z_1, Z_2 \textrm{are subsets of some elements of} \mathcal{Z}$$
+	Show that $A \in \mathcal{X}^\prime$ if and only if $ A  = E\cup Z$ where $E \in \mathcal{X}$ and $Z$ is a subset of a set in $\mathcal{Z}$. Also show that $\mathcal{X}^\prime$ forms a $\sigma$-algebra of $X$.
+\end{exercise}
+\begin{solution}
+	Assume $A = E \cup Z$ where $E \in \mathcal{X}$ and $Z$ is a subset of some set $Z_0 \in \mathcal{ Z}$. Then $A = (E \cup Z) \setminus \emptyset$ gives one direction of our proof.
+
+	Conversely, if $A = (E \cup Z_1) \setminus Z_2$ with $Z_1 \subset Z_1^\prime \in \mathcal{Z}$ and $Z_2 \subset Z_2^\prime \in \mathcal{Z}$. Consider $ A^\prime = E \setminus Z_2^\prime \in \mathcal{X}$. We can verify $A^\prime \subset A$ and that $Z = A \setminus A^\prime$ is a subset of measure zero set $Z_1^\prime \cup Z_2^\prime$. Hence $A = A^\prime\cup Z$ as we need.
+
+	%Let $F = (E \cup Z_1) \setminus Z_2$, then both $E$ and $F$ are measurable with measures $\mu(E) = \mu(F)$ since $$\mu(E) = \mu(E) - \mu(Z_2) \le \mu(E \setminus Z_2) \le \mu(F) \le \mu(E\cup Z_1) \le \mu(E) + \mu(Z_1)= \mu(E)$$
+	%\textit{Above we are using the fair assumption that subsets of measure zero sets are also measure zero. Note that measure was only defined for elements of the $\sigma$-algebra, but with this assumption, we'll get a complete measure in the next exercise. (Compare this with the least upper bound property of real numbers)}
+
+	To prove $\mathcal{X}^\prime$ is a sigma algebra, first we observe that $\mathcal{X} \subset \mathcal{X}^\prime$ by taking $Z_1 = Z_2 = \emptyset$. Then we just need to verify  $\mathcal{X}^\prime$ is closed under countable union of disjoint subsets. Let $A_i = E_i \cup Z_i \in \mathcal{X}^\prime$ be a countable collection of disjoint sets for $E_i \in \mathcal{X}$ and $Z_i \subset Z_i^\prime \in \mathcal{Z}$. Hence $ E_i$ is again a collection of disjoint sets. Moreover $$\bigcup_{i \in \mathbb{N}} A_i = \bigcup_{i\in \mathbb{N}} E_i \ \cup \ \bigcup_{i \in \mathbb{N}} Z_i  = E \cup Z \ \in \mathcal{Z}^\prime$$
+	where $  E \in \mathcal{X}$ and $Z \subset \cup_{i \in \mathbb{N}} Z_i^\prime \in \mathcal{Z}$
+\end{solution}
+
+\begin{exercise}[M]
+	With the notations in exercise \textbf{L}, let $\mu^\prime$ be defined on $\mathcal{X}^\prime$ by $$\mu^\prime(E \cup Z) = \mu(E)$$
+	where $E \in \mathcal{X}$ and $Z$ is a subset of a set in $\mathcal{Z}$. Show that $\mu^\prime$ is a well defined measure on $\mathcal{X}^\prime$ that agree with $\mu$ on $\mathcal{X}$.
+\end{exercise}
+\begin{solution}
+	To show that $\mu^\prime$ is a well defined function on $\mathcal{X}^\prime$, let $E\cup Z_1 = F \cup Z_2$ for $E, F \in \mathcal{X}$ and $Z_1 \subset Z_1^\prime \in \mathcal{Z}, Z_2 \subset Z_2^\prime \in \mathcal{Z}$. We need to show $\mu(E) = \mu(F)$. But
+	$$\mu(E) = \mu^\prime(E \cup Z_1) = \mu^\prime(F \cup Z_2) = \mu(F)$$
+	gives our well defineness.
+	Now it is easy to see that $ \mu^\prime$ agree with $\mu$ on $\mathcal{X}$, since we can just take $Z = \emptyset$
+\end{solution}
+
+\begin{exercise}[N]
+	Let $(X, \mathcal{X}, \mu)$ be a measure space and $(X, \mathcal{X}^\prime, \mu^\prime)$ be its completion. Let $f$ be an $X^\prime$ measurable function from $X \to \bar{\mathbb{R}}$. Show that there exists an $X$ measurable function $g$ which agrees almost everywhere with $f$.
+\end{exercise}
+\begin{solution}
+	Consider the collection of sets $A_r = \{ x \in X \ : \ f(x) > r \}$ for $r \in \mathbb{Q}$. Since $f$ is $\mathcal{X}^\prime$ measurable, $A_r \in \mathcal{X}^\prime$ and by previous exercise $A_r = E_r \cup Z_r$ for each $r \in \mathbb{Q}$ where $E_r \in \mathcal{X}$ and $Z_r \subset Z_r^\prime \in \mathcal{Z}$. Now let $Z = \cup_{r \in \mathbb{Q}} Z_r^\prime$ and define
+	\begin{equation}
+		g(x) = \begin{cases}
+			f(x), \quad x \not \in Z \\
+			0, \quad x \in Z
+		\end{cases}
+	\end{equation}
+	Since $Z$ is a measure zero set, it is clear that $g$ agrees with $f$ almost everywhere in $X$. We just need to prove that $g$ is $\mathcal{X}$ measurable. Consider $F_r = g^{-1}(r, \infty)$. $ F_r = E_r$ if $r \ge 0$ and $E_r \cup Z$ otherwise. Since both $E_r, Z \in \mathcal{X}$, we get $g$ is $\mathcal{X}$ measurable.
+\end{solution}
+
+\begin{exercise}[O]
+	Show that if $(X,  \mathcal{X})$ is a measurable space with a charge $\mu$, then $\mu$ is again continuous from above and below. That is if $E_n$ is an increasing sequence and $F_n$ is a decreasing sequence with $\mu(F_1) < \infty$, then $$\mu \Big( \bigcup_{n=1}^\infty E_n \Big)  =  \lim \mu(E_n), \quad \mu \Big( \bigcap_{n=1}^\infty F_n \Big)  =  \lim \mu(F_n)$$
+\end{exercise}
+\begin{solution}
+	Disjointifying $E_n$ as $E_1^\prime = E_1, E_m^\prime = E_m \setminus E_{m-1}$ lets us use the countable disjoint additivity of the charge $\mu$. Since $E_m$ is an increasing sequence, $E_m =\cup_{i=1}^m E_i = \cup_{i=1}^m E_i^\prime$ for all $m \in \mathbb{N}$, and we get $$\mu \Big(\bigcup_{i\in \mathbb{N}} E_m  \Big)  = \mu \Big(\bigcup_{i \in \mathbb{N}} E_m^\prime \Big) = \sum_{i \in \mathbb{N}} \mu(E_m^\prime)$$
+	Now since $E_m^\prime = E_m \setminus E_{m-1}$, using the telescoping sums we get the RHS of the above equation to be $\lim \mu(E_m)$
+
+	The argument is similar for the continuity from above.
+\end{solution}
+
+\begin{exercise}[P**]
+	Let $\mu$ be a charge on $\mathcal{X}$ and $\pi$ be defined for $E \in \mathcal{X}$ by $$\pi(E) = \sup \{ \mu(A) \ : \ A \subset E, \ A \in \mathcal{X} \}$$
+	Then show that $\pi$ is a measure on $\mathcal{X}$
+\end{exercise}
+\begin{solution}
+	$\pi(\emptyset) = 0$ and that $\pi(E) \ge 0$ for all $E \in \mathcal{X}$ follows from the fact that $\mu(\emptyset) = 0$ and $\emptyset \subset E$ for all $E \subset X$. Now we only need to show countable additivity of $\pi$ for countable disjoint subsets $E_i$.
+
+	But first we'll show that $ \pi$ is countably subadditive on disjoint union of sets in $\mathcal{X}$. That is if $ E_i$ is a disjoint collection of elements in $\mathcal{X}$, then $$\pi \Big(  \bigcup_{n \in \mathbb{N}} E_i \Big) \le \sum_{n \in \mathbb{N}} \pi(E_i)$$
+	For this consider $A \subset \cup_{i = 1}^{m}E_i$ and let $A_i = A \cap \cup_{i = 1}^{m}E_i$. Then by the additivity of the charge $\mu \ (\mu(A) = \sum_{i = 1}^{m} \mu(A_i))$, we get $$ \pi \Big(\bigcup_{i = 1}^{m}E_i\Big) = \sup \Big\{ \mu(A) \ : \ A \subset \bigcup_{i = 1}^{m}E_m \Big\} \le \sum_{i = 1}^{m} \sup \Big\{\mu(A_i) \ : \ A_i \subset E_i \Big\}  = \sum_{i = 1}^{m} \pi(E_i)$$
+	since this is true for all $m \in \mathbb{N}$, taking limits preserves the inequality. Hence we get disjoint subadditivity.
+
+	Now we will proceed to prove disjoint additivity. The definition of $\pi(E_i)$ guarantees the existence of a $F_i \subset E_i$ such that $\mu(F_i) \le  \pi(E_i) \le \mu(F_i) + 2^{-i}\varepsilon$ for every $\varepsilon >0$. Now since $\cup_{i \in \mathbb{N}}F_i \subset \cup_{i \in \mathbb{N}}E_i$, the additivity of the charge $\mu$, and the subadditivity of $\pi$, we get $$\sum_{i \in \mathbb{N}} \mu(F_i) = \mu \Big( \bigcup_{i \in \mathbb{N}} F_i \Big) \le \pi \Big( \bigcup_{i \in \mathbb{N}} E_i \Big) \le \sum_{i \in \mathbb{N}} \pi(E_i) \le \sum_{i \in \mathbb{N}} \mu(F_i) + 2^{-i}\varepsilon = \sum_{i \in \mathbb{N}} \mu(F_i) + \varepsilon$$
+	Since $  \varepsilon$ was arbitrary by choice, limiting it to zero gives us disjoint additivity of $\pi$. Hence we are done.
+\end{solution}
+\begin{remark}
+	\label{rem:hahn_decomposition}
+	Using the same reasoning in exercise \textbf{P}, one can show that $$\pi^{-}(E) := \sup\{-\mu(A)\ :\ A \subset E,\ A \in \mathcal{X} \}$$ is again a measure on $\mathcal{X}$. We can also show that $\mu = \pi - \pi^{-}$. This is known as the Hahn decomposition of charges.
+\end{remark}
+\begin{exercise}[Q (Total variation measure)]
+	If $\mu$ is a charge on $X$, let $\nu$ be defined for $E \in \mathcal{X}$ by $$\nu(E) = \sup \sum_{i=1}^{n} |\mu(A_i)|$$
+	where the supremum is taken over all finite disjoint collection $ A_i$ with $\cup_{i = 1}^{n}A_i = E$. Show that $\nu$ is a measure on $\mathcal{X}$.
+\end{exercise}
+\begin{solution}
+	It is clear that $\nu(\emptyset) = 0$ and $\nu(E) \ge 0$ for all $E \in \mathcal{X}$. We just need to verify countable disjoint additivity of $\nu$. Like we did in the last exercise, we will prove countable disjoint subadditivity first.
+
+	Let $E_j$ be a countable collection of disjoint elements in $\mathcal{X}$. Then for any finite collection $A_i$ with $ \cup_{i = 1}^{n}A_i = \cup_{j \in \mathbb{N}}E_j$ let $A_{ij} = A_i \cap E_j$. Then $$\sum_{i = 1}^{n} |\mu(A_i)| \le \sum_{i = 1}^{n} \sum_{j \in \mathbb{N}} |\mu(A_{ij})| = \sum_{j \in \mathbb{N}} \sum_{i = 1}^{n} |\mu(A_{ij})|$$
+	where the rearrangement in the summation is justified since all the terms are non-negative. Hence the inequality is preserved when taken supremum over all such partitions $A_i$. This gives the disjoint countable subadditivity of $\nu$. $$\nu \Big(\bigcup_{j \in \mathbb{N}} E_j \Big) = \sup \sum_{i = i}^{n} |\mu(A_i)| \le \sum_{j \in \mathbb{N}} \sup \sum_{i = 1}^{n} |\mu(A_{ij})| = \sum_{j \in \mathbb{N}} \nu(E_j)$$
+
+	Now we will proceed to prove countable disjoint additivity. Consider the disjoint collection $E_j \in \mathcal{X}$. By the definition of $\nu$, for all $E_{j}$ and $ \varepsilon > 0$ we can find a finite collection $A_{ij}$ (the number of them might vary, but finite nevertheless) with $\cup_{i = 1}^{n}A_{ij} = E_j$ such that $$\sum_{i = 1}^{n} |\mu(A_{ij})| \ \le \ \nu(E_{j}) \ \le \ 2^{-j}\varepsilon + \sum_{i = 1}^{n} |\mu(A_{ij})|$$
+	Since $\cup_{j \in \mathbb{N}}\cup_{i = 1}^{n} A_{ij} = \cup_{j \in \mathbb{N}} E_{j}$, by the subadditivity of $\nu$ we get, $$\sum_{i = 1}^{n} \sum_{j \in \mathbb{N}} |\mu(A_{ij})| \le \nu \Big(\bigcup_{j \in \mathbb{N}}E_j\Big) \le \sum_{ j \in \mathbb{N}} \nu(E_{j}) \le \sum_{j \in \mathbb{N}} 2^{-j}\varepsilon + \sum_{i = 1}^{n}\sum_{j \in \mathbb{N}} |\mu(A_{ij})| \le \varepsilon + \sum_{i = 1}^{n}\sum_{j \in \mathbb{N}} |\mu(A_{ij})|$$
+	Since $\varepsilon$ was chosen arbitrarily small, it can be limited to $0$ giving $$\nu \Big(\bigcup_{j \in \mathbb{N}}E_j\Big) = \sum_{ j \in \mathbb{N}} \nu(E_{j})$$
+	Hence $\nu$ is a measure on $\mathcal{X}$.
+\end{solution}
+\begin{remark}
+	One can show that the total variation measure $\nu$ defined in the above exercise satisfy $\nu = \pi + \pi^{-}$ where $\pi, \pi^{-}$ are as defined in exercise \textbf{P} and \autoref{rem:hahn_decomposition}
+\end{remark}
+

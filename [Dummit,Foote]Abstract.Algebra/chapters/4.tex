@@ -1,0 +1,34 @@
+% TeX_root = ../main.tex
+
+\setcounter{chapter}{3}
+\chapter{Group Actions}
+
+\section{Group Actions and Permutation Representations}
+
+\setcounter{proposition}{1}
+\begin{proposition}
+  If $G$ is a group acting on a set $A \ni a$. Then the cardinality
+  of the orbit of $a$,  $|O_a| = |G:G_a|$.
+\end{proposition}
+\begin{proof}
+  Notice that every element of $G_a$ acts trivially on $a$. Therefore
+  $h(g(a)) = h(a)$ for all $g \in G_a$. Hence the coset $hG_a$ acts
+  on $a$ and gives $h(a)$. Hence we see that $|O_a| \le |G:G_a|$.
+
+  Now conversely if $hG_a$ and $kG_a$ acts on $a$ to give the same
+  output, i.e $h(a) = k(a)$, then $h^{-1}k(a) = a$. Therefore
+  $h^{-1}k \in G_a$ and hence $hG_a = kG_a$. Hence we get $|O_a| = |G:G_a|$.
+\end{proof}
+
+\begin{questions}
+  \question [3]
+  \begin{solution}
+    Show that if $\sigma(a) = a$ for some $\sigma \in G$, then
+    $\sigma \in G_x$ for all $x \in A$ by the Abelianess. This
+    contradicts $G \leqslant S_A$.
+
+    Now for the other one use the above proposition along with $G_a = \{ e \}$.
+  \end{solution}
+\end{questions}
+
+
