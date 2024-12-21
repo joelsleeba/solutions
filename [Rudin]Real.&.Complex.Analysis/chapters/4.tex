@@ -1,0 +1,169 @@
+% TeX_root = ../main.tex
+\setcounter{chapter}{3}
+\chapter{Elementary Hilbert Space Theory}
+
+\setcounter{exercise}{2}
+\setcounter{solution}{2}
+\begin{exercise}
+  Show that $L^p(\mathbb{T})$ is separable, but $L^{\infty}(
+  \mathbb{T})$ is not.
+\end{exercise}
+\begin{solution}
+  From Theorem 4.25, we see that for all $f \in C(\mathbb{T})$ and
+  $\varepsilon >0$, there is a trigonometric polynomial $P$ such that
+  \begin{align*}
+    |f(t) - P(t)| < \varepsilon
+  \end{align*}
+  for all $t \in \mathbb{R}$. Hence we see that $C(\mathbb{T})
+  \subset  \overline{\textrm{span}}(e^{int})$. Moreover by Theorem
+  3.14, we know that $C(\mathbb{T})$ is a dense subspace of $L^{p}(T)$ for all
+  $1 \le p < \infty$. Thus we see that $L^{p}(\mathbb{T})$ is
+  separable for all $1 \le p < \infty$.
+
+  That $L^{\infty}( \mathbb{T})$ is not separable follows from a
+  similar proof as why $\ell^{\infty}$ is not separable. Using
+  trigonometric identities, we can show that
+  \begin{align*}
+    |e^{int} - e^{imt}| = 2 - 2 \cos((n-m)t)
+  \end{align*}
+  Hence $\|e^{int} - e^{imt}\|_\infty = 2$. Now repeat the proof of
+  the non-separability of $\ell^{\infty}$.
+\end{solution}
+
+\setcounter{exercise}{5}
+\setcounter{solution}{5}
+\begin{exercise}
+  If $D = \{ u_\alpha  \}$ is an orthonormal set for a Hilbert space
+  $\mathcal{H}$, then show that $D$ is a closed bounded set which is
+  not compact. Also show that the set $Q$ of all $x \in \mathcal{H}$ such that
+  \begin{align*}
+    x = \sum_{n \in \mathbb{N}} c_n u_n, \quad |c_n| \le \frac{1}{n}
+  \end{align*}
+  is compact. More generally, let $ \{ \delta_n \}$ be a sequence of
+  positive numbers, and $S$ be the set of all $x \in \mathcal{H}$ of the form
+  \begin{align*}
+    x = \sum_{n \in \mathbb{N}} c_n u_n, \quad |c_n| \le \delta_n
+  \end{align*}
+  Prove that $S$ is compact if and only if $ \sum_{n \in \mathbb{N}}
+  \delta_n^2 < \infty$.
+\end{exercise}
+\begin{solution}
+  That $D$ is not compact follows form the fact that $\|u_i - u_j\| =
+  2$ for all $i \neq j$.exercise
+
+  Now we'll prove that $S$ is compact if and only if $\sum_{n \in
+  \mathbb{N}} \delta_n^2 < \infty$. Then compactness of $Q$ will
+  easily follow.
+  % Consider the identification of $\mathcal{H}$ with
+  % $l^2$. Since this is an isometry, the they are topologically
+  % equivalent. Thus $S$ is compact in $\mathcal{H}$ if and only if
+  % \begin{align*}
+  %   \tilde{S} = \{ (c_n) \in \ell^{2}  \ : \ |c_n| \le \delta_n  \}
+  % \end{align*}
+  % is compact.
+  % Moreover, notice that
+  % \begin{align*}
+  %   \tilde{S} = \prod_{n \in \mathbb{N}} A_n
+  % \end{align*}
+  % where $A_n = \{ x \in C  \ : \  |x| \le \delta_n \}$ is compact.
+  % Hence by Tychonoff's theorem, $\tilde{S}$ is compact.
+
+  % Attempt to prove without Tychonoff
+  Let $\sum_{n \in \mathbb{N}} \delta_n^2 < \infty$ and
+  $\{ U_\alpha  \ : \   \alpha \in A \}$ open cover for $S$. That is
+  \begin{align*}
+    S \subset \bigcup_{\alpha} U_\alpha
+  \end{align*}
+  Since $0 \in S$, $0 \in U_{\alpha_0}$ for some $\alpha_0 \in A$.
+  Then there exists an $\varepsilon > 0$ such that $B_\varepsilon(0)
+  \subset U_{\alpha_0}$. Since $\sum_{n \in \mathbb{N}} \delta_n^2 <
+  \infty$, there is an $N_\varepsilon$ such that
+  \begin{align*}
+    \sum_{n = N_\varepsilon+1}^{\infty}  \delta_n^2 < \varepsilon
+  \end{align*}
+  By the triangle inequality and the orthonormality of $u_n$,
+  \begin{align*}
+    \Big \| \sum_{n = N_\varepsilon + 1}^{\infty}  \delta_n u_n \Big
+    \|^2 = \sum_{n = N_\varepsilon + 1}^{\infty} \delta_n^2 < \varepsilon
+  \end{align*}
+  Hence
+  \begin{align*}
+    S \cap \overline{\textrm{span}}\{ u_n  \ : \  n > N_\varepsilon
+    \} \subset U_{\alpha_0}
+  \end{align*}
+
+  \textit{This seems hard, If you can't still find it refer
+  \href{https://proofwiki.org/wiki/Hilbert_Cube_is_Compact}{ProofWiki}}.
+\end{solution}
+
+\begin{solution}
+  Choose
+  \begin{align*}
+    c_k = \frac{1}{k \big(\sum_{n \in E_k} a_n^2\big)}
+  \end{align*}
+\end{solution}
+
+\begin{solution}
+  Notice that any Hilbert space $\mathcal{H}$ is isometrically
+  isomorphic to $\ell^{2}(I)$, where $I$ is an orthonormal basis to
+  $\mathcal{H}$. The rest follows.
+\end{solution}
+
+\begin{solution}
+  First assume $A = [a, b] \subset [0, 2\pi]$ is an interval. Then
+  show that it holds. Now use the fact that every open set in
+  $\mathbb{R}$ is a countable union of disjoint intervals. Then that
+  is true for all open sets using an $\varepsilon/2^i$ argument. Now
+  for any closed set $A$, use the fact
+  that $A = [0, 2\pi] \setminus U$ for some open set $U$. And therefore
+  \begin{align*}
+    \int_A  f_n \ d \mu = \int_{[0, 2\pi]}  f_n \ d \mu - \int_U  f_n \ d \mu
+  \end{align*}
+  both of the which converge to $0$. Now the fact that for any borel
+  set $A$ and an $ \varepsilon > 0$, there is an open set $U$ and a
+  closed set $V$ such that $V \subset A \subset U$ and $\mu(U
+  \setminus V) < \varepsilon$. Then
+  \begin{align*}
+    \int_U  f_n \ d \mu - \int_A  f_n \ d \mu = \int f_n \chi_{U
+    \setminus A} \ d \mu < \mu(U \setminus A) < \varepsilon
+  \end{align*}
+  Since $\int_U f_n \ d \mu \to 0$, we get that $\int_A  f_n \ d \mu
+  \to 0$ as well.
+\end{solution}
+
+\begin{solution}
+  Since $1 - 2\sin^2(\alpha) = \cos(2\alpha)$ for all $\alpha$, we get that
+  \begin{align*}
+    \int_E 1 -  2\sin^2(n_k x) \ d \mu = \int_E \cos(2n_k x) \ d \mu
+  \end{align*}
+  which converges to $0$ by the previous exercise. \textcolor{red}{verify}
+\end{solution}
+
+\begin{solution}
+  $$\Bigg \{ \Big(1 + \frac{1}{n}\Big)e^{int}  \ : \  n \in
+  \mathbb{N}\Bigg \}$$
+\end{solution}
+
+\begin{solution}
+  \textit{skipping for now}
+\end{solution}
+
+\begin{solution}
+  \textit{skipping for now, but \textcolor{red}{verify}}.
+\end{solution}
+
+\begin{solution}
+  Use the projection onto the space spanned by $1, x, x^2$. First
+  find an orthonormal basis to the space and then evaluate the projection.
+
+  By a similar reasoning, we can find that $g(x) = \sqrt{\frac{7}{2}}x^3$
+\end{solution}
+
+\begin{solution}
+  \begin{align*}
+    \langle f , g \rangle  = \int_{0}^{\infty}  f(x)g(x)e^{-x} \ dx
+  \end{align*}
+  is an inner product in the real square integrable functions in $[0,
+  \infty)$. Now do the same Gram-Schmidt procedure to $1, x, x^2$ as
+  above question.
+\end{solution}
