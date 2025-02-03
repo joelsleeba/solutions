@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1731799287.05197 0
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1731864923.90749 0
   "articles.bib" 0 -1 0 ""
   "main.bcf" 0 -1 0 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1731799285.61503 "main.tex" "main.pdf" "main" 1731799287.05258 0
+["pdflatex"] 1731864922.50099 "main.tex" "main.pdf" "main" 1731864923.9081 0
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1727349926 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm" 1727349926 1120 7f9f170e8aa57527ad6c49feafd45d54 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1727349926 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -210,14 +210,14 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1727349926 41588 b43d3e860a4f94167ee1e725ff526a72 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1731387758.65684 326993 92f68cc10ab4ce9240e9fbb800f4c9bd ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1731387750 7113019 a31d280819109898ee010565d9f73de2 ""
-  "chapters/1.aux" 1731799286.88018 5033 3b6e3105affafed2d4ceab65ee5c3b61 "pdflatex"
-  "chapters/1.tex" 1731799284.83686 1342 fe1b447dcc9df34bd4ac12276a8c6d30 ""
-  "main.aux" 1731799286.88018 364 e445b9a3d181820d591fd61bf08a6fd8 "pdflatex"
+  "chapters/1.aux" 1731864923.80353 5033 3b6e3105affafed2d4ceab65ee5c3b61 "pdflatex"
+  "chapters/1.tex" 1731864921.8302 1558 997d6244964d5570fb9a8f6b85967cce ""
+  "main.aux" 1731864923.80687 364 e445b9a3d181820d591fd61bf08a6fd8 "pdflatex"
   "main.bbl" 0 -1 0 "biber main"
-  "main.out" 1731799286.88351 931 31d4ca595cc04dbf5c90796e30f5521f "pdflatex"
-  "main.run.xml" 1731799286.88351 2309 17ee7f4cf776a640b618a2b2d5deaa10 "pdflatex"
+  "main.out" 1731864923.80687 931 31d4ca595cc04dbf5c90796e30f5521f "pdflatex"
+  "main.run.xml" 1731864923.80687 2309 17ee7f4cf776a640b618a2b2d5deaa10 "pdflatex"
   "main.tex" 1731798545.74421 3102 4c909c6d5df23af6e60f4a8422c7a60b ""
-  "main.toc" 1731799286.88351 564 29546029fbdb9740e5cdfbb41f1b85f8 "pdflatex"
+  "main.toc" 1731864923.80687 564 29546029fbdb9740e5cdfbb41f1b85f8 "pdflatex"
   (generated)
   "chapters/1.aux"
   "main.aux"

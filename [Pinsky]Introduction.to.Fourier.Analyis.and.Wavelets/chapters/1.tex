@@ -41,15 +41,19 @@
 \end{exercise}
 
 \begin{corollary}
-  Use the fact that
+  Why is
   \begin{align*}
-    \int_{\mathbb{T}}  g(  \theta+ \phi) e^{ i n \theta} \ d \theta  =
-    \int_{\mathbb{T}}  g( \pi) e^{in(y -  \phi)} \ d  y = e^{-ix
-    \phi} \int_{\mathbb{T}}  g(\pi) e^{iny} \ d y
+    \int_{\mathbb{T}}  g(\phi - \theta) e^{-i n \theta} \ d \theta  =
+    \int_{\mathbb{T}}  g(y) e^{in(y - \phi)} \ d  y
   \end{align*}
-  to get that the $n$-th Fourier coefficient for $g(\theta - \phi)$
-  is $e^{-in\phi} D_n$ where $D_n$ is the $ n$-th Fourier
-  coefficient of $g(x)$.
+  Shouldn't that be the negative of the RHS.
+  % \begin{align*}
+  %   \int_{\mathbb{T}}  g(\phi - \theta) e^{-i n \theta} \ d \theta  =
+  %   -\int_{\mathbb{T}}  g(y) e^{-in(\phi - y)} \ d  y = -e^{-in
+  %   \phi} \int_{\mathbb{T}}  g(y) e^{iny} \ d y
+  % \end{align*}
+  % to get that the $n$-th Fourier coefficient for $g(\phi- \theta)$
+  % is $-e^{-in\phi} D_{-n}$ where $D_{-n}$ is the $-n$-th Fourier
+  % coefficient of $g(x)$. Now use
 \end{corollary}
-
-
+%
